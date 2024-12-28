@@ -8,14 +8,6 @@ import (
 	"time"
 )
 
-type Selector interface {
-	// return supported methods
-	Methods() []uint8
-	// select method
-	Select(methods ...uint8) (method uint8)
-	// on method selected
-	OnSelected(method uint8, conn net.Conn) (net.Conn, error)
-}
 
 type Conn struct {
 	c              net.Conn
